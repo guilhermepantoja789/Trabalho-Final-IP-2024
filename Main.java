@@ -15,12 +15,12 @@ public class Main {
             //      Run sem otimizacao      //
             //                              //
             int determinante;
-            double inicio = System.nanoTime();
+            long inicio = System.nanoTime();
             determinante = mat.determinante();
-            double fim = System.nanoTime();
-            double tempo_ms = (fim - inicio) / 1000000.0d;
+            long fim = System.nanoTime();
+            long tempo_ms = fim - inicio;
             System.out.println("Valor calculado: " + determinante);
-            System.out.println("Tempo em ms (sem otimizacao): " + tempo_ms);
+            System.out.println("Tempo em nanosegundos (sem otimizacao): " + tempo_ms);
             //                              //
             //            fim               //
             //      Run sem otimizacao      //
@@ -33,9 +33,9 @@ public class Main {
             inicio = System.nanoTime();
             determinante = mat.determinanteOtmi();
             fim = System.nanoTime();
-            tempo_ms = (fim - inicio) / 1000000.0d;
+            tempo_ms = fim - inicio;
             System.out.println("Valor calculado: " + determinante);
-            System.out.println("Tempo em ms (com otimizacao): " + tempo_ms);
+            System.out.println("Tempo em nanosegundos (com otimizacao): " + tempo_ms);
             //                              //
             //            fim               //
             //      Run com otimizacao      //
