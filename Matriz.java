@@ -48,7 +48,16 @@ public class Matriz {
 		for(int contLinhas = 0; contLinhas < this.getTamanhoLinha(); contLinhas++){
 			System.out.println();
 			for(int contColunas = 0; contColunas < this.getTamanhoColuna(); contColunas++){
-				System.out.print(this.getValor(contLinhas, contColunas) + " ");
+				int val = this.getValor(contLinhas, contColunas);
+				if(val < 10){
+					System.out.print("00" + val + " ");
+				}
+				else if(val < 100){
+					System.out.print("0" + val + " ");
+				}
+				else{
+					System.out.print(val + " ");
+				}
 			}
 		}
 		System.out.println();	
