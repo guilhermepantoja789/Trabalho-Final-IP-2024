@@ -56,7 +56,7 @@ public class Matriz {
 
 	public void inicializaRandomico(){
 		int ordem = this.getTamanhoLinha();
-		Random gerador = new Random();
+		Random gerador = new Random(8);
 		for(int contLinhas = 0; contLinhas < this.getTamanhoLinha(); contLinhas++){
 			for(int contColunas = 0; contColunas < this.getTamanhoColuna(); contColunas++){
 				int novoValor = gerador.nextInt(ordem * ordem);
