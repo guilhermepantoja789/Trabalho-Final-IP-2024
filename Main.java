@@ -23,7 +23,7 @@ public class Main {
             //                              //
             //            fim               //
             //      Run sem otimizacao      //
-            //                              //
+            //                              /
             tempo = fim - inicio;
             System.out.println("Valor calculado: " + determinante);
             System.out.println("Tempo em nanosegundos (sem otimizacao): " + tempo);
