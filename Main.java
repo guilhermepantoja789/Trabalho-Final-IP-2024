@@ -10,21 +10,24 @@ public class Main {
             matOriginal.inicializaRandomico();
             mat.copia(matOriginal);
             mat.imprime();                  // vizualizacao da matriz estudada
+            int determinante;
+            long inicio, fim, tempo;
+
             //                              //
             //            inicio            //
             //      Run sem otimizacao      //
             //                              //
-            int determinante;
-            long inicio = System.nanoTime();
+            inicio = System.nanoTime();
             determinante = mat.determinante();
-            long fim = System.nanoTime();
-            long tempo_ms = fim - inicio;
-            System.out.println("Valor calculado: " + determinante);
-            System.out.println("Tempo em nanosegundos (sem otimizacao): " + tempo_ms);
+            fim = System.nanoTime();
             //                              //
             //            fim               //
             //      Run sem otimizacao      //
             //                              //
+            tempo = fim - inicio;
+            System.out.println("Valor calculado: " + determinante);
+            System.out.println("Tempo em nanosegundos (sem otimizacao): " + tempo);
+            
 
             //                              //
             //            inicio            //
@@ -33,13 +36,13 @@ public class Main {
             inicio = System.nanoTime();
             determinante = mat.determinanteOtmi();
             fim = System.nanoTime();
-            tempo_ms = fim - inicio;
-            System.out.println("Valor calculado: " + determinante);
-            System.out.println("Tempo em nanosegundos (com otimizacao): " + tempo_ms);
             //                              //
             //            fim               //
             //      Run com otimizacao      //
             //                              //
+            tempo = fim - inicio;
+            System.out.println("Tempo em nanosegundos (com otimizacao): " + tempo);
+            
         }
     }
 }
