@@ -94,8 +94,8 @@ class MatrizQuadrada extends Matriz{
 		int resposta = 0,
 			ordem = mat.getOrdem(),
 			fila = otimizacao.getElemento(0),
-			louc = otimizacao.getElemento(1);
-		if(louc == 0){
+			linhaOuColuna = otimizacao.getElemento(1);
+		if(linhaOuColuna == 0){
 			for(int contColunas = 0; contColunas < mat.getTamanhoColuna(); contColunas++){
 				int cofator = mat.getValor(fila, contColunas);
 				if(cofator != 0){
