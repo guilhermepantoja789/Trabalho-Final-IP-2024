@@ -9,7 +9,7 @@ public class Main {
             MatrizQuadrada mat = new MatrizQuadrada(ordems.getElemento(x));
             matOriginal.inicializaRandomico();
             mat.copia(matOriginal);
-            mat.imprime();                  // vizualizacao da matriz estudada
+            mat.imprime();                  // vizualizacao da matriz analisada
             int determinante;
             long inicio, fim, tempo;
 
