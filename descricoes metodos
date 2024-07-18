@@ -20,4 +20,8 @@ O objetivo do método é retornar a fila (linha ou coluna) que contém o maior n
 
 "private int detOrdemNotmi(MatrizQuadrada mat)"
 
-O objetivo do método é calcular o determinante de uma matriz quadrada de orden n (n > 2) utilizando-se do teorema de laplace. Neste método já estão implementadas as otimizações
+O objetivo do método é calcular o determinante de uma matriz quadrada de orden n (n > 2) utilizando-se do teorema de laplace. Neste método já estão implementadas as duas otimizações. Sendo a primeira o método "melhorFila" presente no início deste método e que define, idealmente, o melhor caminho a se seguir ao executar o algoritimo. Já a segunda é uma análise feita com cada elemento da matriz analisado: quando o elemento for diferente de zero, a função caminha normalmente para seu passo recursivo (calcular o determinante de uma matriz obtida ao remover a linha e a coluna correspondentes às indexações desse elemento) e já quando o elemento for igual a zero, o método pula esse passo recursivo e ja considera o resultado como "0" (toda multilicação por 0 resulta em 0). Desta forma, o algoritimo percorre cada elemento da fila definida no início, executando os seguintes passos: 
+1. Obtem o valor do elemento analisado (caso seja 0, só adiciona 0 à variável resposta e pula os passos seguintes);
+2. Calcula o cofator (sinal) para aquela posição de linha e coluna (-1 caso i+j ímpar e 1 caso i+j par);
+3. Copia a matriz atual para uma de ordem menor retirando a linha e a coluna correspondentes à indexação do elemtento analizado e calcula o determinante dessa nova matriz;
+4. Calcula o produto de todos os valores obtidos nos passos (1), (2) e (3) e adiciona à variável que será devolvida pelo método como resposta.
