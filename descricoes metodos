@@ -1,0 +1,27 @@
+"private int detOrdem1(MatrizQuadrada mat)"
+	
+O método retorna um inteiro contendo o determinante da matriz contida no objeto da classe MatrizQuadrada dado como parâmetro e, como descrito em seu nome, ele retorna o determinante dessa matriz (que deve ordem igual a 1). Portanto esse valor será o unico valor armazenado na matriz (com indexações iguais a zero).
+
+"private int detOrdem2(MatrizQuadrada mat)"
+
+O método retorna um inteiro contendo o determinante da matriz contida no objeto da classe MatrizQuadrada dado como parâmetro e, como descrito em seu nome, ele retorna o determinante dessa matriz (que deve ordem igual a 2). Portanto esse valor será o produto entre os elementos da diagonal principal (int diagonalPrincipal) que contém os elementos de index igual ([0,0] e [1,1]) subtraido do produto entre os elementos da diagonal secundária (int diagonalSecundaria) que contém os elementos de index simétrico ([0,1] e [1,0]).
+
+"private int calculaSinalCofator(int indiceLinha, int indiceColuna)"
+	
+O método retorna um inteiro contendo um valor necessário para o calculo de um elemento do teorema de Laplace: o cofator. Seu valor é definido por (-1)⁽i+j⁾, sendo a variavel "indiceLinha" correspondente ao elemento "i" e a variável "indiceColuna" correspondente ao elemento "j". Portanto deve retornar 1 quando i+j for par [(-1)^n, com n par sempre resulta em 1] e -1 quando i+j for ímpar [(-1)^m, com m ímpar sempre resulta em -1].
+
+"public void copiaMatrizMaiorParaMenor(MatrizQuadrada maior, MatrizQuadrada menor, int linhaExcluida, int colunaExcluida)"
+
+O método recebe dois objetos da classe Matriz Quadrada: um contendo uma matriz de ordem n e outro contendo uma matriz de ordem (n-1). Também recebe dois inteiros representando, respectivamente, a linha e a coluna a serem excluídas da matriz maior para "alocá-la" na matriz menor. Dessa forma, o método percorre todos os elementos da matriz maior (com exceção dos elementos contidos na linha e coluna excluidas) copiando eles para a matriz menor.
+
+"private Vetor melhorFila(MatrizQuadrada mat)"
+
+O objetivo do método é retornar a fila (linha ou coluna) que contém o maior numero de zeros para otimizar o tempo de execução do algoritimo do teorema de laplace. O método recebe um objeto da classe MatrizQuadrada contendo uma matriz quadrada de ordem n e percorre todos os elementos de cada linha e cada coluna conjuntamente, analisando a quantidade de elementos iguais a zero em cada linha ou coluna e a indexação daquela linha ou coluna, inicialmente tomam-se o numero de zeros e a indexação da primeira linha e da primeira coluna como base, comparando-as com as filas subsequentes e armazenando sempre a quantidade de zeros e a indexação da fila com mais zeros. Ao final temos quatro variáveis: "numZerosLinha" e "indexLinha" referenciando o numero de zeros e a indexação da linha com mais zeros e "numZerosColuna" e "indexColuna" referenciando o numero de zeros e a indexação da coluna com mais zeros. Por fim o método compara os dois valores numZeros e determina qual maior, assim retorna um objeto da classe Vetor que possui dois inteiros: o primeiro contendo a indexação da fila com maior numero de elementos iguais a zero e o segundo sendo "0" quando a fila for linha e "1" quando for coluna.
+
+"private int detOrdemNotmi(MatrizQuadrada mat)"
+
+O objetivo do método é calcular o determinante de uma matriz quadrada de orden n (n > 2) utilizando-se do teorema de laplace. Neste método já estão implementadas as duas otimizações. Sendo a primeira o método "melhorFila" presente no início deste método e que define, idealmente, o melhor caminho a se seguir ao executar o algoritimo. Já a segunda é uma análise feita com cada elemento da matriz analisado: quando o elemento for diferente de zero, a função caminha normalmente para seu passo recursivo (calcular o determinante de uma matriz obtida ao remover a linha e a coluna correspondentes às indexações desse elemento) e já quando o elemento for igual a zero, o método pula esse passo recursivo e ja considera o resultado como "0" (toda multilicação por 0 resulta em 0). Desta forma, o algoritimo percorre cada elemento da fila definida no início, executando os seguintes passos: 
+1. Obtem o valor do elemento analisado (caso seja 0, só adiciona 0 à variável resposta e pula os passos seguintes);
+2. Calcula o cofator (sinal) para aquela posição de linha e coluna (-1 caso i+j ímpar e 1 caso i+j par);
+3. Copia a matriz atual para uma de ordem menor retirando a linha e a coluna correspondentes à indexação do elemtento analizado e calcula o determinante dessa nova matriz;
+4. Calcula o produto de todos os valores obtidos nos passos (1), (2) e (3) e adiciona à variável que será devolvida pelo método como resposta.
